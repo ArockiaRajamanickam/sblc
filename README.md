@@ -1,24 +1,21 @@
 # SBLC Digital Management Platform
 
-A digital **Standby Letter of Credit (SBLC)** management and issuance system covering the full SBLC lifecycle — issuance, banking compliance (KYC/AML), ledger verification, loan disbursement, and multi-party **role-based access control**.
+A system for managing Standby Letters of Credit (SBLC) end to end: issuance, banking compliance checks (KYC/AML), ledger verification, loan disbursement, and role-based access for every party involved.
 
-Built with **Domain-Driven Design** and **Clean Architecture** principles for maintainability and security.
+The backend follows Domain-Driven Design and Clean Architecture, mostly because SBLC workflows get complicated fast and I wanted the domain logic to stay readable.
 
-## Tech stack
+## Stack
 
-- **Backend** — FastAPI (Python), SQLAlchemy 2.0 + Alembic migrations
-- **Data** — PostgreSQL (relational), Redis (caching & idempotency)
-- **Frontend** — React (`frontend/`)
-- **Infra** — Docker Compose
+FastAPI with SQLAlchemy 2.0 and Alembic migrations, PostgreSQL for relational data, Redis for caching and idempotency, and a React frontend in `frontend/`.
 
-## Run it
+## Running it
 
 ```bash
 docker-compose up --build
 ```
 
-Then open the API docs at `http://localhost:8000/docs`. Configuration is environment-driven — see `docker-compose.yml` for the variables (`DATABASE_URL`, `SECRET_KEY`, …) and override the defaults for anything beyond local development.
+API docs come up at `http://localhost:8000/docs`. Config is environment driven, see `docker-compose.yml` for the variables and override the defaults for anything past local development.
 
 ## Status
 
-Development snapshot. The production line — test suite, security review, and deployment docs — continues in a private repository.
+This is a development snapshot. The production work (tests, security review, deployment docs) continues in a private repo.
